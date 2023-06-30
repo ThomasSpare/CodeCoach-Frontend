@@ -17,6 +17,7 @@ import NavBar from "./components/NavBar";
 import EmptyTextarea from "./components/TextArea";
 import { withStyles } from "@material-ui/core/styles";
 import HomePage from "./containers/HomePage";
+import coachArea from "./containers/coachArea";
 import registerPage from "./containers/RegisterPage";
 import loginPage from "./containers/LoginPage";
 import Dashboard from "./containers/DashboardPage";
@@ -107,11 +108,12 @@ class App extends Component {
         <BrowserRouter>
         <Switch>
       
-        <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/" element={<loginPage/>} />
-        <Route path="/" element={<registerPage />} />
-        <Route path="/" element={<profilePagePage />} />
+        <Route exact path="/home" component={ HomePage } />
+        <Route exact path="/coaching" component={coachArea } />
+        <Route eaxct path="/dashboard" component={ Dashboard } />
+        <Route path="/login" component={ loginPage } />
+        <Route path="/register" component={ registerPage } />
+        <Route path="/profile" component={ profilePage } />
 
         </Switch>
         </BrowserRouter>
