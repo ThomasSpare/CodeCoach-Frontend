@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { store } from "./store";
+
 import { w3cwebsocket as W3CWebSocket } from "websocket";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Button from "@material-ui/core/Button";
@@ -98,7 +101,7 @@ class App extends Component {
     const { classes } = this.props;
     return (
       <Box sx={{ width: "100%" }}>
-        <NavBar />
+        <Provider store={ store }>
         <BrowserRouter>
         <Switch>
       
@@ -111,6 +114,7 @@ class App extends Component {
 
         </Switch>
         </BrowserRouter>
+        </Provider>
 
         <Grid container>
           <Grid item xs={6}>

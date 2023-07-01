@@ -1,7 +1,34 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const { isAuthenticated } = useSelector(state => state.user);
+  
+  const authLinks = (
+    <>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='/coaching'> 
+      CoachArea
+      </NavLink>
+    </li>
+    </>
+  )
+
+  const guestLinks = (
+    <>
+      <li className='nav-item'>
+        <NavLink className='nav-link' to='/login'> 
+        Login
+        </NavLink>
+      </li>
+      <li className='nav-item'>
+        <NavLink className='nav-link' to='/register'> 
+        Register
+        </NavLink>
+      </li>
+    </>
+  )
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,26 +55,11 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className='nav-link' to='/coaching'> 
-            Coach Area
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className='nav-link' to='/login'> 
-            Login
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className='nav-link' to='/register'> 
-            Register
-            </NavLink>
-          </li>
-          <li className="nav-item">
             <NavLink className='nav-link' to='/profile'> 
             Profile
             </NavLink>
           </li>
-       
+          {isAuthenticated ? authLinks : guestLinks}      
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Code Coaching
