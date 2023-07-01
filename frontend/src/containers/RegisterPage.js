@@ -1,8 +1,11 @@
+import Layout from '../components/Layout';
+
+
 const registerPage = () => {
   return (
-      <div>
+      <Layout title= 'Code Coach | Register' content='learn to code, javascript, python'>
       <h1>Register</h1>
-      </div>
+      </Layout>
   );     
   };
 

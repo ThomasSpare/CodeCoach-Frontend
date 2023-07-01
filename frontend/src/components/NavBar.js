@@ -1,73 +1,74 @@
 import React from "react";
-import logo from "../assets/CodeCoachLogo.png";
-import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
-import SignUpForm from "../pages/auth/SignUpForm";
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-//import '@fontsource/roboto/300.css';
-//import '@fontsource/roboto/400.css';
-//import '@fontsource/roboto/500.css';
-//import '@fontsource/roboto/700.css';
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
   return (
-  
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
-      <Container>
-        <NavLink to="/">
-          <Navbar.Brand>
-            <img src={logo} alt="logo" height="45" />
-          </Navbar.Brand>
-        </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto text-left">
-            <NavLink
-              exact="true"
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-              to="/coaching"
-            >
-              <i className="fas fa-home"></i>Coach Area
-            </NavLink>
-            <NavLink
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-              to="/dashboard"
-            >
-              <i className="fas fa-sign-in-alt"></i>Dashboard
-            </NavLink>
-            <NavLink
-              to="/login"
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-            >
-              <i className="fas fa-user-plus"></i>Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-            >
-              <i className="fas fa-user-plus"></i>Register
-            </NavLink>
-            <NavLink
-              to="/register"
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-              
-              to="/profile"
-              className={ ({ isActive }) => isActive ? styles.Active : styles.NavLink}
-              >
-              Profile</NavLink>
-          
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <Link className='navbar-brand' to='/'>
+        Code Coach
+      </Link>
+      <img class="mr-3 rounded mx-auto d-block" src="frontend/src/assets/CodeCoachLogo_edited.jpg" alt="Code Coach logo"></img>
+      <button className="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNavDropdown" 
+      aria-controls="navbarNavDropdown" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
 
-          
-              
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <NavLink className='nav-link' to='/'> 
+            Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className='nav-link' to='/coaching'> 
+            Coach Area
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className='nav-link' to='/login'> 
+            Login
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className='nav-link' to='/register'> 
+            Register
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className='nav-link' to='/profile'> 
+            Profile
+            </NavLink>
+          </li>
+       
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Code Coaching
+            </a>
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" href="#">HTML/ CSS</a></li>
+              <li><a className="dropdown-item" href="#">Python</a></li>
+              <li><a className="dropdown-item" href="#">Javascript</a></li>
+              <li><a className="dropdown-item" href="#">Databases</a></li>
+              <li><a className="dropdown-item" href="#">Django</a></li>
+              <li><a className="dropdown-item" href="#">Django REST</a></li>
+              <li><a className="dropdown-item" href="#">Bootstrap</a></li>
+              <li><a className="dropdown-item" href="#">Other Frontend Libraries</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+
   );
 }; 
 export default NavBar;

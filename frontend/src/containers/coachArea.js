@@ -1,8 +1,10 @@
+import Layout from '../components/Layout';
+
 const coachArea = () => {
     return (
-        <div>
+        <Layout title= 'Code Coach | Coaching' content='learn to code, javascript, python'>
         <h1>Coaching</h1>
-        </div>
+        </Layout>
     );     
     };
 
