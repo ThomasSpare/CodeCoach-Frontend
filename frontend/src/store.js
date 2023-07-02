@@ -1,4 +1,4 @@
-import { configureStore, isAction } from '@reduxjs/toolkit';
+import { configureStore} from '@reduxjs/toolkit';
 import { userReducer } from './features/user';
 
 export const store = configureStore({
@@ -6,4 +6,3 @@ export const store = configureStore({
         user: userReducer,
     }, 
 });
-
