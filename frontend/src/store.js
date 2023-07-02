@@ -1,9 +1,9 @@
 import { configureStore, isAction } from '@reduxjs/toolkit';
-import { useReducer } from './features/user';
+import { userReducer } from './features/user';
 
 export const store = configureStore({
     reducer: {
-        user: useReducer,
+        user: userReducer,
     }, 
 });
 
