@@ -2,9 +2,42 @@ import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const { isAuthenticated } = useSelector(state => state.user);
 
 
-  return (
+  const authLinks = (
+		<>
+			<li className='nav-item'>
+				<NavLink className='nav-link' to='/dashboard'>
+					Dashboard
+				</NavLink>
+			</li>
+			<li className='nav-item'>
+				<a className='nav-link' href='#!'>
+					Logout
+				</a>
+			</li>
+		</>
+	);
+
+  const guestLinks = (
+		<>
+			<li className='nav-item'>
+				<NavLink className='nav-link' to='/login'>
+					Login
+				</NavLink>
+			</li>
+			<li className='nav-item'>
+				<NavLink className='nav-link' to='/register'>
+					Register
+				</NavLink>
+			</li>
+		</>
+	);
+  
+  return (  
+
+
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
       <Link className='navbar-brand' to='/'>
@@ -28,11 +61,13 @@ const NavBar = () => {
             Home
             </NavLink>
           </li>
+          {isAuthenticated ? authLinks : guestLinks }
           <li className="nav-item">
             <NavLink className='nav-link' to='/profile'> 
             Profile
             </NavLink>
           </li>
+          {isAuthenticated ? authLinks : guestLinks} 
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Code Coaching

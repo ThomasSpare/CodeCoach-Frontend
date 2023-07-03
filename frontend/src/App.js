@@ -13,32 +13,25 @@ import ProfilePage from "./containers/ProfilePage";
 import "./App.css";
 
 
-const App = () => (
-      //const dispatch = useDispatch();
+const App = () => {
 
-      //const { user, isAuthenticated, error, message } = useSelector(
-        //    (state) => state.auth
-          //);
-      
-      //useEffect(() => {
-        //    dispatch(checkAuth());
-      //},[]);
+  return (
+    <div className="App">
 
-    <Provider store={store}>
-            <Router>          
-                  <Routes>
-                              <Route path='/' element={<HomePage />} />
-                              <Route path='/coaching' element={<CoachArea />} />
-                              <Route path='/dashboard' element={<DashboardPage />} />
-                              <Route path='/login' element={<LoginPage />} />
-                              <Route path='/register' element={<RegisterPage />} />
-                              <Route path='/profile' element={<ProfilePage />} />
-                  </Routes>
-            </Router>
-      
-      </Provider>
+ 
+        <Router>          
+              <Routes>
+                  <Route exact path='/' element={<HomePage />} />
+                  <Route path='/coaching' element={<CoachArea />} />
+                  <Route path='/dashboard' element={<DashboardPage />} />
+                  <Route path='/login' element={<LoginPage />} />
+                  <Route path='/register' element={<RegisterPage />} />
+                  <Route path='/profile' element={<ProfilePage />} />
+              </Routes>
+        </Router>
+  
+    </div>
+  );
+};
 
-    
-);
-
-  export default App;       
+export default App;       
