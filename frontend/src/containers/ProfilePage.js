@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 
 
-const profilePage = () => {
+const ProfilePage = () => {
     return (
         <Layout title= 'Code Coach | Profile' content='learn to code, javascript, python'>
         <h1>Profile</h1>
@@ -9,4 +9,4 @@ const profilePage = () => {
     );     
     };
 
-    export default profilePage;
+    export default ProfilePage;

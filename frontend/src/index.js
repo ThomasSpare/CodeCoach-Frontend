@@ -6,16 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import "./api/axiosDefault";
 import { store } from './store';
 import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-        <App />  
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+  <App />
+</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

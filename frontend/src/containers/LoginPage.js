@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 
-const loginPage = () => {
+const LoginPage = () => {
     return (
         <Layout title='Code Coach | Login Page' content='learn to code, javascript, python'>
         <h1>Login</h1>
@@ -8,4 +8,4 @@ const loginPage = () => {
     );     
     };
 
-    export default loginPage;
+    export default LoginPage;

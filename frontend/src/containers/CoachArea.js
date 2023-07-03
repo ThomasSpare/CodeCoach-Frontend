@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 
-const coachArea = () => {
+const CoachArea = () => {
     return (
         <Layout title= 'Code Coach | Coaching' content='learn to code, javascript, python'>
         <h1>Coaching</h1>
@@ -8,4 +8,4 @@ const coachArea = () => {
     );     
     };
 
-    export default coachArea;
+    export default CoachArea;

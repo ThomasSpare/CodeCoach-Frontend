@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../components/Layout';
 import { Navigate } from 'react-router-dom';
-import { register } from 'features/user';
+import { register } from "../authSlice";
+
 
 
 
@@ -88,9 +89,9 @@ const RegisterPage = () => {
 					/>
 				</div>
 				{loading ? (
-					<div className='spinner-border text-primary' role='status'>
-						<span className='visually-hidden'>Loading...</span>
-					</div>
+					<div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+					<span class="sr-only">Loading...</span>
+				  </div>
 				) : (
 					<button className='btn btn-primary mt-4'>Register</button>
 				)}
