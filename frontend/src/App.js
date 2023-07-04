@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from './features/user';
-import { Provider } from "react-redux";
-import { store } from "./store";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./containers/HomePage";
 import CoachArea from "./containers/CoachArea";
@@ -13,12 +11,14 @@ import ProfilePage from "./containers/ProfilePage";
 import "./App.css";
 
 
+
+
+
 const App = () => {
+
 
   return (
     <div className="App">
-
- 
         <Router>          
               <Routes>
                   <Route exact path='/' element={<HomePage />} />
@@ -28,8 +28,7 @@ const App = () => {
                   <Route path='/register' element={<RegisterPage />} />
                   <Route path='/profile' element={<ProfilePage />} />
               </Routes>
-        </Router>
-  
+        </Router> 
     </div>
   );
 };

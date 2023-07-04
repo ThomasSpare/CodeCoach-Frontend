@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const baseUrl = window.location.origin;
 
 axios.defaults.baseURL = baseUrl + "/api";

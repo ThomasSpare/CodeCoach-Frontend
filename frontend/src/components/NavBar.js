@@ -1,12 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+
+import React from "react";
 import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const { isAuthenticated } = useSelector(state => state.user);
 
 
   const authLinks = (
-		<>
+		<React.Fragment>
 			<li className='nav-item'>
 				<NavLink className='nav-link' to='/dashboard'>
 					Dashboard
@@ -17,11 +19,11 @@ const NavBar = () => {
 					Logout
 				</a>
 			</li>
-		</>
+      </React.Fragment>
 	);
 
   const guestLinks = (
-		<>
+    <React.Fragment>
 			<li className='nav-item'>
 				<NavLink className='nav-link' to='/login'>
 					Login
@@ -32,12 +34,10 @@ const NavBar = () => {
 					Register
 				</NavLink>
 			</li>
-		</>
+    </React.Fragment>
 	);
   
-  return (  
-
-
+return (  
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
       <Link className='navbar-brand' to='/'>
@@ -87,8 +87,6 @@ const NavBar = () => {
       </div>
     </div>
   </nav>
-    
-
-  );
+    )
 }; 
 export default NavBar;

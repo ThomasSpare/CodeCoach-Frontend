@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../components/Layout';
 import { Navigate } from 'react-router-dom';
-import { register } from "../authSlice";
+import { register } from "../features/user";
 
 
 
