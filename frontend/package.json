@@ -37,7 +37,6 @@
     "websocket": "^1.0.34"
   },
   "scripts": {
-    "heroku-prebuild": "npm install -g serve",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
