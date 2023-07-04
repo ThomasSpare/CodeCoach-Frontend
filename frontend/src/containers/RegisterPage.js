@@ -8,8 +8,8 @@ import { register } from "../features/user";
 
 
 const RegisterPage = () => {
-	const dispatch = useDispatch();
-	const { registered, loading } = useSelector(state => state.user);
+	const dispatch = useDispatch();	
+	const { redirect, isAuthenticated, loading } = useSelector(state => state.user);
 
 	const [formData, setFormData] = useState({
 		first_name: '',
@@ -24,13 +24,28 @@ const RegisterPage = () => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
-	const onSubmit = e => {
-		e.preventDefault();
 
-		dispatch(register({ first_name, last_name, email, password }));
-	};
-
-	if (registered) return <Navigate to='/login' />;
+	const onSubmit = async (data, form) => {
+		setFormData(data);
+		const payloadUser = {
+		  email: data.email,
+		  password: data.password1,
+		  password_confirm: data.password2,
+		  first_name: data.first_name,
+		  last_name: data.last_name,
+		  birth_date: data.date.toISOString().substring(0, 10),
+		  country: data.country,
+		};
+		dispatch(register(payloadUser));
+	  };
+	
+	  if (redirect) {
+		return <Navigate to="/login" />;
+	  }
+	
+	  if (isAuthenticated) {
+		return <Navigate to="/" />;
+	  }
 
 	return (
 		<Layout title='Auth Site | Register' content='Register page'>
@@ -89,8 +104,8 @@ const RegisterPage = () => {
 					/>
 				</div>
 				{loading ? (
-					<div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-					<span class="sr-only">Loading...</span>
+					<div className="spinner-grow" role="status">
+					<span className="sr-only">Loading...</span>
 				  </div>
 				) : (
 					<button className='btn btn-primary mt-4'>Register</button>

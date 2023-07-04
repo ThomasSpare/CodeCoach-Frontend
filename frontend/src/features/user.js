@@ -183,7 +183,7 @@ const userSlice = createSlice({
 	},
 });
 
-export const { resetRedirect, resetError, resetMessage, setError, setMessage, setUser } = 
+export const { resetRegistered, resetRedirect, resetError, resetMessage, setError, setMessage, setUser } = 
 userSlice.actions;
 
 export default userSlice.reducer;

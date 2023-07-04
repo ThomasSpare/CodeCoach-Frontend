@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const baseUrl = window.location.origin;
+const baseUrl =  'https://codecoach-a2f14f649917.herokuapp.com';
 
 axios.defaults.baseURL = baseUrl + "/api";
 axios.defaults.withCredentials = true;

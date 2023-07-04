@@ -60,6 +60,12 @@ height: 18px;
   color: #001510;
   border-color: #00bf8f;
 }
+/*Homepage codecoach images */
+#root > div > div > img{
+  width: 30%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 body{
   background: #00bf8f;  /* fallback for old browsers */

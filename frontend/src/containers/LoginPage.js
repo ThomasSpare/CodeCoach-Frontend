@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useState, useSelector, useEffect, useDispatch, redirect } from 'react';
 import { Navigate } from 'react-router-dom';
-import { resetRegistered, login } from '../features/user';
 import Layout from '../components/Layout';
+import { login, resetRedirect, resetRegistered } from "../features/user";
+
 
 const LoginPage = () => {
 	const dispatch = useDispatch();
@@ -25,13 +25,24 @@ const LoginPage = () => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
-	const onSubmit = e => {
-		e.preventDefault();
+	const onSubmit = async (data) => {
+    setFormData(data);
+    const payload = {
+      email: data.email,
+      password: data.password,
+    };
+    dispatch(login(payload));
+  };
 
-		dispatch(login({ email, password }));
-	};
+  useEffect(() => {
+    if (redirect) {
+      dispatch(resetRedirect());
+    }
+  }, [redirect]);
 
-	if (isAuthenticated) return <Navigate to='/dashboard' />;
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
 	return (
 		<Layout title='Auth Site | Login' content='Login page'>
