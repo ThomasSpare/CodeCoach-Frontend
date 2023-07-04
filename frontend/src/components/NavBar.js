@@ -43,13 +43,13 @@ return (
       <Link className='navbar-brand' to='/'>
         Code Coach
       </Link>
-      <img class="mr-3 rounded mx-auto d-block" src="frontend/src/assets/CodeCoachLogo_edited.jpg" alt="Code Coach logo"></img>
+      <img className="mr-3 rounded mx-auto d-block" src="frontend/src/assets/CodeCoachLogo_edited.jpg" alt="Code Coach logo"></img>
       <button className="navbar-toggler" 
       type="button" 
       data-bs-toggle="collapse" 
       data-bs-target="#navbarNavDropdown" 
       aria-controls="navbarNavDropdown" 
-      aria-expanded="false" 
+      aria-expanded="" 
       aria-label="Toggle navigation">
 
         <span className="navbar-toggler-icon"></span>
@@ -73,14 +73,44 @@ return (
               Code Coaching
             </a>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="#">HTML/ CSS</a></li>
-              <li><a className="dropdown-item" href="#">Python</a></li>
-              <li><a className="dropdown-item" href="#">Javascript</a></li>
-              <li><a className="dropdown-item" href="#">Databases</a></li>
-              <li><a className="dropdown-item" href="#">Django</a></li>
-              <li><a className="dropdown-item" href="#">Django REST</a></li>
-              <li><a className="dropdown-item" href="#">Bootstrap</a></li>
-              <li><a className="dropdown-item" href="#">Other Frontend Libraries</a></li>
+            <div className="accordion" id="accordionExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header">
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div classname="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
             </ul>
           </li>
         </ul>

@@ -3,10 +3,10 @@ import axios from "axios";
 
 
 const initialState = {
-	isAuthenticated: true,
+	isAuthenticated: false,
 	user: null,
 	loading: false,
-	registered: true,
+	registered: false,
 	loading: null,
 	redirect: null,
 };
