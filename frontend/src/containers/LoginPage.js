@@ -18,7 +18,7 @@ const LoginPage = () => {
 
 	useEffect(() => {
 		if (registered) dispatch(resetRegistered());
-	}, [registered]);
+	}, [registered, dispatch]);
 
 	const { email, password } = formData;
 
@@ -39,7 +39,7 @@ const LoginPage = () => {
     if (redirect) {
       dispatch(resetRedirect());
     }
-  }, [redirect]);
+  }, [dispatch]);
 
   if (isAuthenticated) {
     return <Navigate to="/" />;

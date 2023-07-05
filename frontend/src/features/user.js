@@ -5,7 +5,6 @@ import axios from "axios";
 const initialState = {
 	isAuthenticated: false,
 	user: null,
-	loading: false,
 	registered: false,
 	loading: null,
 	redirect: null,
@@ -26,7 +25,7 @@ export const register = createAsyncThunk(
 		} = data;
 
 		try {
-			const response = await axios.post('register', {
+			const response = await axios.post('/profiles/register', {
 				first_name,
 				last_name,
 				email,
