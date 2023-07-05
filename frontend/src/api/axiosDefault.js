@@ -3,7 +3,7 @@ import axios from "axios";
 
 const baseUrl =  'https://codecoach-a2f14f649917.herokuapp.com';
 
-axios.defaults.baseURL = baseUrl + "/api";
+axios.defaults.baseURL = baseUrl + "/api/profiles";
 axios.defaults.withCredentials = true;
 
 // if response is 401 try to refresh token

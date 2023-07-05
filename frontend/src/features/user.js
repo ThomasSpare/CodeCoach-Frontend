@@ -12,7 +12,7 @@ const initialState = {
 };
 
 export const register = createAsyncThunk(
-		"auth/register",
+		"/register",
 		async (data, thunkAPI) => {
 		const {
 			first_name,
@@ -48,7 +48,7 @@ export const register = createAsyncThunk(
 	);
 
 
-export const getUser = createAsyncThunk('users/me', async (_, thunkAPI) => {
+export const getUser = createAsyncThunk('', async (_, thunkAPI) => {
 	try {
 		const response = await axios.get("user");
 		const { dispatch } = thunkAPI;
