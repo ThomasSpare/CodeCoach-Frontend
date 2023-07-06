@@ -29,6 +29,22 @@ body {
   --epr-hover-bg-color: rgba(28, 44, 38, 0.739);
 }
 
+/*Learn text column on learn.js page*/
+#learn{
+  
+  color: rgb(219, 219, 219);
+  background-color: rgb(2, 38, 53);
+  font-family: 'Kanit', sans-serif;
+  text-align: left;
+}
+
+#row-learn{
+  padding-top: 5%;
+  padding-bottom: 20%;
+}
+
+
+
 #root > div > div > div:nth-child(3) > aside > div.Flex.epr-preview.FlexRow > div> img{
 height: 18px;
 }
@@ -73,4 +89,7 @@ body{
   background: linear-gradient(to bottom, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
+.offcanvas-body{
+  text-align: justify;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

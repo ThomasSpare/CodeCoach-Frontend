@@ -38,7 +38,7 @@ const NavBar = () => {
     </React.Fragment>
 	);
   
-return (  
+  return (  
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
       <Link className='navbar-brand' to='/'>
@@ -48,9 +48,9 @@ return (
       <button className="navbar-toggler" 
       type="button" 
       data-bs-toggle="collapse" 
-      data-bs-target="#navbarNavDropdown" 
+      data-bs-target="/learnnavbarNavDropdown" 
       aria-controls="navbarNavDropdown" 
-      aria-expanded="" 
+      aria-expanded="false" 
       aria-label="Toggle navigation">
 
         <span className="navbar-toggler-icon"></span>
@@ -68,21 +68,22 @@ return (
             Coaches
             </NavLink>
           </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Code Coaching
-            </a>
-            <ul className="dropdown-menu">
-            
-            <div class="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Coaching Areas
-              </button>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Learn
+          </button>
+          <ul className="collapse navbar-collapse">
+            <div className="dropdown">
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" ><a tabindex="0" className="btn btn-lg btn-info" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">HTML</a>
-                </a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <a classame="dropdown-item" href="#">Something else here</a>
+                <a id="html" className="dropdown-item" href="/learn">HTML</a>
+                <a id="css" className="dropdown-item" href="/learn">CSS</a>
+                <a id="python" className="dropdown-item" href="/learn">Python</a>
+                <a id="javascript" className="dropdown-item" href="/learn">Javascript</a>
+                <a id="django" className="dropdown-item" href="/learn">Django</a>
+                <a className="dropdown-item" href="/learn">Databases</a>
+                <a className="dropdown-item" href="/learn">Django Restframework</a>
+                <a className="dropdown-item" href="/learn">Deplyoing</a>
+                <a className="dropdown-item" href="/learn">Testing</a>
               </div>
             </div>
             </ul>
