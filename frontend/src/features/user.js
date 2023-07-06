@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const register = createAsyncThunk(
-		"/register",
+		"/profiles/register",
 		async (data, thunkAPI) => {
 		const {
 			first_name,
@@ -25,7 +25,7 @@ export const register = createAsyncThunk(
 		} = data;
 
 		try {
-			const response = await axios.post('/profiles/register', {
+			const response = await axios.post('register', {
 				first_name,
 				last_name,
 				email,
@@ -61,7 +61,7 @@ export const getUser = createAsyncThunk('', async (_, thunkAPI) => {
 });
 		
 
-export const login = createAsyncThunk('users/login', async (data, thunkAPI) => {
+export const login = createAsyncThunk('profiles/login', async (data, thunkAPI) => {
 		const { email, password } = data;
 	try {
 		const response = await axios.post("login", { email, password });
