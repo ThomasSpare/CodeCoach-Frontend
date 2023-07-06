@@ -14,14 +14,10 @@ export const register = createAsyncThunk(
 		"/profiles/register",
 		async (data, thunkAPI) => {
 		const {
-			first_name,
-			last_name,
+			first_name, ''
+			last_name,''
 			email,
-			password,
-			password_confirm,
-			country,
-			learning,
-			
+			password,	
 		} = data;
 
 		try {
@@ -30,9 +26,6 @@ export const register = createAsyncThunk(
 				last_name,
 				email,
 				password,
-				password_confirm,
-				country,
-				learning,
 			});
 			return response.data;
 		}	catch (error) {

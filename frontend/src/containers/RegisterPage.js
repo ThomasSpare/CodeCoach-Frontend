@@ -28,13 +28,11 @@ const RegisterPage = () => {
 	const onSubmit = async (data, form) => {
 		setFormData(data);
 		const payloadUser = {
-		  email: data.email,
-		  password: data.password1,
-		  password_confirm: data.password2,
-		  first_name: data.first_name,
-		  last_name: data.last_name,
-		  birth_date: data.date.toISOString().substring(0, 10),
-		  country: data.country,
+		first_name: data.first_name,
+		last_name: data.last_name,
+		email: data.email,
+		password: data.password1,	
+		 
 		};
 		dispatch(register(payloadUser));
 	  };
