@@ -1,7 +1,8 @@
-import { useState, useSelector, useEffect, useDispatch, redirect } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from 'react-router-dom';
 import Layout from '../components/Layout';
-import { login, resetRedirect, resetRegistered } from "../features/user";
+import { login, resetRegistered } from "../features/user";
 
 
 const LoginPage = () => {
@@ -34,12 +35,6 @@ const LoginPage = () => {
     };
     dispatch(login(payload));
   };
-
-  useEffect(() => {
-    if (redirect) {
-      dispatch(resetRedirect());
-    }
-  }, [dispatch]);
 
   if (isAuthenticated) {
     return <Navigate to="/" />;
