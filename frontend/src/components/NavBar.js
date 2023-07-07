@@ -68,8 +68,8 @@ const NavBar = () => {
             Coaches
             </NavLink>
           </li>
-        <li class="nav-item dropdown">
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Learn
           </button>
           <ul className="collapse navbar-collapse">

@@ -9,22 +9,22 @@ const ProfilePage = () => {
         <Layout title= 'Code Coach | Profile' content='learn to code, javascript, python'>
         <h1>Our Coaches</h1>
         <img src={coach1} className="img-thumbnail" alt="codecoach 1"></img>
-        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach1" aria-controls="offcanvasWithBothOptions">Peter March, Frontend</button>
+        <button className="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach1" aria-controls="offcanvasWithBothOptions">Peter March, Frontend</button>
         <br></br>
         <img src={coach2} className="img-thumbnail" alt="codecoach 2"></img>
-        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach2" aria-controls="offcanvasWithBothOptions">Erik Summer, Databases, Backend</button>
+        <button className="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach2" aria-controls="offcanvasWithBothOptions">Erik Summer, Databases, Backend</button>
         <br></br>
         <img src={coach4} className="img-thumbnail" alt="codecoach 4"></img>
-        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach4" aria-controls="offcanvasWithBothOptions">Sammy Winters, Frontend</button>
+        <button className="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#coach4" aria-controls="offcanvasWithBothOptions">Sammy Winters, Frontend</button>
         <br></br>
 
         
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach1" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Peter March, Frontend languages</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach1" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Peter March, Frontend languages</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
+        <div className="offcanvas-body">
             <p>Peter March is a principal technical course developer at codecoach.
             At DocuSign, Peter builds instructional materials on creating integrations 
             using DocuSign APIs. At DocuSign, Peter builds instructional materials on 
@@ -36,10 +36,10 @@ const ProfilePage = () => {
         </div>
         </div>
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach2" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="coach2">Erik Summer, Databases, Backend</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach2" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="coach2">Erik Summer, Databases, Backend</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <p>Erik Summer is a veteran engineer who enjoys building software using
@@ -55,12 +55,12 @@ const ProfilePage = () => {
         </div>
         </div>
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach4" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="coach4">Sammy Winters, Frontend languages</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="coach4" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="coach4">Sammy Winters, Frontend languages</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
+        <div className="offcanvas-body">
             <p>Sammy Winters is a web development instructor and front-end developer.
                 An instructor with a passion for excellence in documentation and experimenting 
                 with new web technologies, Sammy has created courses that teach CSS fundamentals 

@@ -12,8 +12,8 @@ const DashboardPage = () => {
     return (
         <Layout title= 'Code Coach | Dashboard' content='learn to code, javascript, python'>
         {loading || user === null ? (
-        <div class="spinner-grow" role="status">
-        <span class="sr-only"></span>
+        <div className="spinner-grow" role="status">
+        <span className="sr-only"></span>
         </div>
         ): (
             <React.Fragment>
