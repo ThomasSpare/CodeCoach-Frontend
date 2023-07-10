@@ -9,7 +9,7 @@ import { register } from "../features/user";
 
 const RegisterPage = () => {
 	const dispatch = useDispatch();	
-	const { redirect, isAuthenticated, loading } = useSelector(state => state.user);
+	const { registered, loading } = useSelector(state => state.user);
 
 	const [formData, setFormData] = useState({
 		first_name: '',
@@ -25,26 +25,16 @@ const RegisterPage = () => {
 	};
 
 
-	const onSubmit = async (data, form) => {
-		setFormData(data);
-		const payloadUser = {
-		first_name: data.first_name,
-		last_name: data.last_name,
-		email: data.email,
-		password: data.password1,	
-		 
-		};
-		dispatch(register(payloadUser));
-	  };
-	
-	  if (redirect) {
-		return <Navigate to="/login" />;
-	  }
-	
-	  if (isAuthenticated) {
-		return <Navigate to="/" />;
-	  }
+	const onSubmit = e => {
+		e.preventDefault();
 
+		dispatch(register({ first_name, last_name, email, password }));
+	};
+	
+	if (registered) 
+		return <Navigate to="/" />;
+	
+	
 	return (
 		<Layout title='Auth Site | Register' content='Register page'>
 			<h1>Register for an Account</h1>

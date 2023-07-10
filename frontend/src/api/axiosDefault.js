@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const baseUrl =  'https://codecoach-a2f14f649917.herokuapp.com/';
+const baseUrl =  'https://8000-thomasspare-codecoach-spvitnctgqr.ws-eu101.gitpod.io'; //'https://codecoach-a2f14f649917.herokuapp.com/';
 
 axios.defaults.baseURL = baseUrl + "/api";
 axios.defaults.withCredentials = true;
@@ -30,11 +30,11 @@ axios.interceptors.response.use(
         })
         .catch((error) => {
           refreshing = false;
-          console.clear();
+          //console.clear();
           return Promise.reject("error");
         });
     } else {
-      console.clear();
+      //console.clear();
       return Promise.reject("error");
     }
   }

@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const register = createAsyncThunk(
-		"/profiles/register",
+		"register",
 		async (data, thunkAPI) => {
 		const {
 			first_name,
@@ -19,14 +19,19 @@ export const register = createAsyncThunk(
 			email,
 			password,	
 		} = data;
-
+		console.log("register done");
 		try {
-			const response = await axios.post('register', {
+			const response = await axios.post('/profiles/register', {
 				first_name,
 				last_name,
 				email,
 				password,
-			});
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+			}
+			},);
+			
 			return response.data;
 		}	catch (error) {
 			let errorsData = error.response.data;
@@ -86,10 +91,10 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 		});
 		const { dispatch } = thunkAPI;
 		dispatch(getUser());
-		console.clear();
+		//console.clear();
 		return response.data;
 	  } catch (error) {
-		console.clear();
+		//console.clear();
 		return thunkAPI.rejectWithValue(error.response.data.error);
 	  }
 	}
@@ -104,7 +109,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 		dispatch(checkAuth());
 		return response.data;
 	  } catch (error) {
-		console.clear();
+		//console.clear();
 		return thunkAPI.rejectWithValue(error.response.data.error);
 	  }
 	}
