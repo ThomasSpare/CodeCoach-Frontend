@@ -30,12 +30,12 @@ axios.interceptors.response.use(
         })
         .catch((error) => {
           refreshing = false;
-          //console.clear();
+          console.clear();
           return Promise.reject("error");
         });
     } else {
-      //console.clear();
-      return Promise.reject("error");
+        console.clear();
+        return Promise.reject("error");
     }
   }
 );

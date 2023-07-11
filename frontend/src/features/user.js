@@ -26,10 +26,6 @@ export const register = createAsyncThunk(
 				last_name,
 				email,
 				password,
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-			}
 			},);
 			
 			return response.data;
@@ -91,10 +87,10 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 		});
 		const { dispatch } = thunkAPI;
 		dispatch(getUser());
-		//console.clear();
+		console.clear();
 		return response.data;
 	  } catch (error) {
-		//console.clear();
+		console.clear();
 		return thunkAPI.rejectWithValue(error.response.data.error);
 	  }
 	}
@@ -109,7 +105,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 		dispatch(checkAuth());
 		return response.data;
 	  } catch (error) {
-		//console.clear();
+		console.clear();
 		return thunkAPI.rejectWithValue(error.response.data.error);
 	  }
 	}
