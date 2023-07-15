@@ -1,17 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from "axios";
 
-
-const initialState = {
-	isAuthenticated: false,
-	user: null,
-	registered: false,
-	loading: null,
-	redirect: null,
-};
-
 export const register = createAsyncThunk(
-		"register",
+		"auth/register",
 		async (data, thunkAPI) => {
 		const {
 			first_name,
@@ -55,7 +46,7 @@ export const getUser = createAsyncThunk('', async (_, thunkAPI) => {
 });
 		
 
-export const login = createAsyncThunk('profiles/login', async (data, thunkAPI) => {
+export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
 		const { email, password } = data;
 	try {
 		const response = await axios.post("login", { email, password });
@@ -65,7 +56,8 @@ export const login = createAsyncThunk('profiles/login', async (data, thunkAPI) =
 	} catch (error) {
 		return thunkAPI.rejectWithValue(error.response.data.error);
 	}
-});
+}
+);
 	
 		
 
@@ -77,6 +69,16 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 	  return thunkAPI.rejectWithValue(error.response.data.error);
 	}
   });
+
+  const initialState = {
+	isAuthenticated: false,
+	user: null,
+	registered: false,
+	loading: null,
+	redirect: null,
+};
+
+
 
   export const checkAuth = createAsyncThunk(
 	"auth/checkAuth",
@@ -119,6 +121,7 @@ const userSlice = createSlice({
 			state.registered = false;
 		},
 	},
+
 
 	extraReducers: builder => {
 		builder
@@ -180,4 +183,8 @@ export const { resetRegistered, resetRedirect, resetError, resetMessage, setErro
 userSlice.actions;
 
 export default userSlice.reducer;
+
+
+
+
 
